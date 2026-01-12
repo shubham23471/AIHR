@@ -4,3 +4,4 @@ pydantic
 pymupdf
 python-dotenv
 python-multipart
+openai

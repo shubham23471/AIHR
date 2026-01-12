@@ -1,15 +1,16 @@
 """
-TalentProof - Core Screening Engine
+AIHR - Core Screening Engine
 FastAPI application entry point.
 """
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from api.v1.routes.resume_routes import router as resume_router
+from llm.llm_service import llm_service
 
 app = FastAPI(
-    title="TalentProof API",
-    description="Agentic Talent Intelligence Platform - Core Screening Engine",
+    title="AIHR API",
+    description="Agentic Intelligence Hiring Platform - Core Screening Engine",
     version="0.1.0"
 )
 
@@ -30,3 +31,9 @@ app.include_router(resume_router)
 async def health_check():
     """Health check endpoint."""
     return {"status": "AIHR is healthy"}
+
+
+@app.get("/health/llm")
+async def llm_health_check():
+    """Check LLM service connectivity."""
+    return llm_service.check_health()
