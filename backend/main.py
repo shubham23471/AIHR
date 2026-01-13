@@ -6,6 +6,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from api.v1.routes.resume_routes import router as resume_router
+from api.v1.routes.analysis_routes import router as analysis_router
 from llm.llm_service import llm_service
 
 app = FastAPI(
@@ -25,6 +26,7 @@ app.add_middleware(
 
 # Include routers
 app.include_router(resume_router)
+app.include_router(analysis_router)
 
 
 @app.get("/health")
