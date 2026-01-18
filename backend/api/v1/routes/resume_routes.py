@@ -58,7 +58,7 @@ async def list_resumes():
         ResumeListItem(
             filename=r["filename"],
             page_count=r["page_count"],
-            text_preview=r["text"][:500] if r["text"] else ""
+            text_preview=r["text"] if r["text"] else ""
         )
         for r in resumes_data
     ]

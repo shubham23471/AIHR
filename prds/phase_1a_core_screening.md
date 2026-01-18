@@ -10,8 +10,8 @@
 
 - Sample resumes: 4-5 PDFs in `/data/resumes/`
 - Sample JD: JSON file at `/data/sample_jd.json`
-- LM Studio running locally with DeepSeek-R1-Distill-Qwen-14B (OpenAI-compatible endpoint)
-- Virtual environment: `/Users/shubham/saas/aihr/.venv/bin/python`
+- LM Studio running locally with neuralmagic/DeepSeek-R1-Distill-Qwen-7B-quantized.w8a8 (OpenAI-compatible endpoint)
+- Virtual environment: `/home/shubham/saas/AIHR/.venv/bin/python`
 
 ---
 
@@ -124,7 +124,7 @@
 ## LLM Recommendation
 
 For local inference with semantic reasoning:
-- **Primary:** DeepSeek-R1-Distill-Qwen-14B (Q4_K_M) — good reasoning, runs on 16GB+ VRAM
+- **Primary:** neuralmagic/DeepSeek-R1-Distill-Qwen-7B-quantized.w8a8 8-bit quantization— good reasoning, runs on 16GB+ VRAM
 - **Fallback:** Llama-3.1-8B-Instruct — faster, less VRAM, weaker reasoning
 - **Context:** Ensure 8K+ context window for long resumes + JD
 

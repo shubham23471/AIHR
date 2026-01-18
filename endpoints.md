@@ -4,7 +4,7 @@
 
 Start the server:
 ```bash
-python -m uvicorn main:app --reload --port 8000 --app-dir backend
+python -m uvicorn main:app --reload --port 8001 --app-dir backend
 ```
 
 ---
@@ -25,28 +25,28 @@ python -m uvicorn main:app --reload --port 8000 --app-dir backend
 
 ### Health Check
 ```bash
-curl http://localhost:8000/health
+curl http://localhost:8001/health
 ```
 
 ### LLM Health Check
 ```bash
-curl http://localhost:8000/health/llm
+curl http://localhost:8001/health/llm
 ```
 
 ### Parse PDF Resume
 ```bash
-curl -X POST "http://localhost:8000/api/v1/resumes/parse" \
+curl -X POST "http://localhost:8001/api/v1/resumes/parse" \
   -F "file=@data/resumes/Shubham_SR_DE_2025.pdf"
 ```
 
 ### List Resumes
 ```bash
-curl http://localhost:8000/api/v1/resumes/
+curl http://localhost:8001/api/v1/resumes/
 ```
 
 ### Skill Analysis
 ```bash
-curl -X POST "http://localhost:8000/api/v1/analyze/skills" \
+curl -X POST "http://localhost:8001/api/v1/analyze/skills" \
   -H "Content-Type: application/json" \
   -d '{
     "resume_text": "John Doe\nSenior Software Engineer at Google (2020-Present)\n\nSkills: Python, Java, Kubernetes, Docker, GCP, PostgreSQL\n\nExperience:\n- Led team of 5 engineers\n- Built microservices architecture\n- Implemented CI/CD pipelines\n\nPrevious: Software Engineer at Facebook (2018-2020)\n\nEducation: MS Computer Science, Stanford 2018"
